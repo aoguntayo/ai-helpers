@@ -8,6 +8,9 @@
     "aipcc": {
       "name": "AIPCC"
     },
+    "pytorch": {
+      "name": "PyTorch"
+    },
     "vllm": {
       "name": "vLLM"
     }
@@ -162,6 +165,14 @@
         "allowed_tools": "Bash WebSearch WebFetch"
       },
       {
+        "name": "torchtalk-analyzer",
+        "description": "Analyze PyTorch internals across Python, C++, and CUDA layers using the TorchTalk MCP server. Use when asked about how PyTorch operators work internally, where functions are implemented, what would break if code is modified, or finding tests for PyTorch operators.",
+        "category": "pytorch",
+        "file_path": "helpers/skills/torchtalk-analyzer/SKILL.md",
+        "id": "torchtalk-analyzer",
+        "allowed_tools": "Bash, Read, Grep, Glob"
+      },
+      {
         "name": "unit-test-project-conformant",
         "description": "Guides the agent to write unit tests that strictly conform to the project's existing testing structure, patterns, and style by learning from similar tests before writing anything new.",
         "category": "general",
@@ -234,6 +245,22 @@
         "file_path": "helpers/commands/rpm-examine.md",
         "argument_hint": "[copr-chroot-url] OR [build-log-url] [srpm-url] OR [build.log] [specfile|dist-git] [sources]",
         "synopsis": "/rpm:examine <copr-chroot-url>"
+      },
+      {
+        "name": "torchtalk-setup",
+        "description": "Install and configure TorchTalk MCP server for PyTorch cross-language analysis",
+        "category": "pytorch",
+        "file_path": "helpers/commands/torchtalk-setup.md",
+        "argument_hint": "",
+        "synopsis": "/torchtalk:setup"
+      },
+      {
+        "name": "torchtalk-trace",
+        "description": "Trace a PyTorch function's cross-language binding chain (Python -> C++ -> CUDA)",
+        "category": "pytorch",
+        "file_path": "helpers/commands/torchtalk-trace.md",
+        "argument_hint": "<function-name> [focus]",
+        "synopsis": "/torchtalk:trace <function-name>"
       }
     ],
     "agents": [

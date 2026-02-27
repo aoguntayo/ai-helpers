@@ -3,6 +3,11 @@ AIPCC:
   - commit-message-assistant
   - aipcc-adr-assistant
 
+PyTorch:
+  - torchtalk-analyzer
+  - torchtalk-setup
+  - torchtalk-trace
+
 vLLM:
   - vllm-compare-reqs
   - vllm-slack-summary
